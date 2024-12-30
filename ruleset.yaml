@@ -1,4 +1,1133 @@
-- domains: 
+domains:
+
+lemonde.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.metabar-premium-login-box, .overlay_premium, .subscription-overlay, .article__premium-paywall');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.article__content > div[class*="subscription"]');
+banners.forEach(el => { el.remove(); });
+// Déblocage potentiel du contenu (peut ne pas fonctionner à tous les coups)
+const locked_content = document.querySelectorAll('.article__content, .js_paywall_content');
+locked_content.forEach(el => {
+el.classList.remove('article__content--locked', 'js_paywall_content');
+el.style.overflow = 'visible';
+el.style.maxHeight = 'none';
+});
+});
+</script>
+domains:
+
+lefigaro.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.fig-premium-wall, .fig-paywall');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.article__premium-content');
+banners.forEach(el => { el.classList.remove('article__premium-content'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelectorAll('.article-content');
+locked_content.forEach(el => {
+el.style.overflow = 'visible';
+el.style.maxHeight = 'none';
+});
+});
+</script>
+domains:
+
+liberation.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.SubscriberBlock-modal, .c-article-paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-paywalled');
+banners.forEach(el => { el.classList.remove('is-paywalled'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelectorAll('.lbr-article');
+locked_content.forEach(el => {
+el.style.overflow = 'visible';
+el.style.maxHeight = 'none';
+});
+});
+</script>
+domains:
+
+lesechos.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-container, .pdl-offer-container');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.article__content--premium');
+banners.forEach(el => { el.classList.remove('article__content--premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article__content');
+if (locked_content) {
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+lopinion.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.premium-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu (peut être plus basique)
+const article_content = document.querySelector('.article-content');
+if (article_content) {
+article_content.style.overflow = 'visible';
+article_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+la-croix.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-active');
+paywall_overlays.forEach(el => { el.classList.remove('paywall-active'); });
+const banners = document.querySelectorAll('.premium-only');
+banners.forEach(el => { el.classList.remove('premium-only'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-full-content');
+if (locked_content) {
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+leparisien.fr
+
+aujourdhui.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.lp-paywall-overlay, .apf-paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.lp-container-premium, .apf-container-premium');
+banners.forEach(el => { el.classList.remove('lp-container-premium', 'apf-container-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelectorAll('.lp-article-content, .apf-article-content');
+locked_content.forEach(el => {
+el.style.overflow = 'visible';
+el.style.maxHeight = 'none';
+});
+});
+</script>
+domains:
+
+20minutes.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (peut être moins intrusif)
+const paywall_overlays = document.querySelectorAll('.premium-access-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.premium-article');
+banners.forEach(el => { el.classList.remove('premium-article'); });
+// Tenter de rendre visible le contenu premium
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+el.style.pointerEvents = 'auto';
+});
+});
+</script>
+domains:
+
+ouest-france.fr
+
+lecourrierdelouest.fr
+
+presseocean.fr
+
+sudouest.fr
+
+lavoixdunord.fr
+
+letelegramme.fr
+
+ladepeche.fr
+
+estrepublicain.fr
+
+leprogres.fr
+
+nicematin.com
+
+varmatin.com
+
+corsematin.com
+
+lamontagne.fr
+
+leberry.fr
+
+ledauphine.com
+
+lunion.fr
+
+lardennais.fr
+
+paris-normandie.fr
+
+lebienpublic.com
+
+vosgesmatin.fr
+
+dna.fr
+
+lalsace.fr
+
+lejsl.com
+
+lemainelibre.fr
+
+lanouvellerepublique.fr
+
+charentelibre.fr
+
+larepubliquedespyrenees.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux d'abonnement (approches générales, peut nécessiter ajustements selon le site)
+const paywall_overlays = document.querySelectorAll('.paywall-overlay, .premium-block, .subscriber-only');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.article-premium, .premium-content-locked');
+banners.forEach(el => { el.classList.remove('article-premium', 'premium-content-locked'); });
+// Tentative de rendre le contenu visible (approche générale)
+const locked_content = document.querySelectorAll('.is-premium-content, .restricted-content');
+locked_content.forEach(el => {
+el.style.overflow = 'visible';
+el.style.maxHeight = 'none';
+el.style.filter = 'none'; // Supprime les filtres de flou
+});
+});
+</script>
+domains:
+
+nouvelobs.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.obs-premium-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.content-restricted');
+if (locked_content) {
+locked_content.classList.remove('content-restricted');
+}
+});
+</script>
+domains:
+
+lepoint.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.premium');
+banners.forEach(el => { el.classList.remove('premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-locked')) {
+locked_content.classList.remove('is-locked');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+lexpress.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-body');
+if (locked_content && locked_content.classList.contains('is-locked')) {
+locked_content.classList.remove('is-locked');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+marianne.net
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-restricted')) {
+locked_content.classList.remove('is-restricted');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+valeursactuelles.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.va-paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-restricted')) {
+locked_content.classList.remove('is-restricted');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+challenges.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-locked')) {
+locked_content.classList.remove('is-locked');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+capital.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-restricted')) {
+locked_content.classList.remove('is-restricted');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+humanite.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-locked')) {
+locked_content.classList.remove('is-locked');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+lejdd.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.jdd-paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-restricted')) {
+locked_content.classList.remove('is-restricted');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+latribune.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-locked')) {
+locked_content.classList.remove('is-locked');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+lesechos.fr # Déjà inclus plus haut mais mentionné dans la presse éco
+
+domains:
+
+investir.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (peut être simple)
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+// Tenter de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+boursorama.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (peut être simple)
+const paywall_overlays = document.querySelectorAll('.premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+// Tenter de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+lequipe.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.content-restricted');
+if (locked_content) {
+locked_content.classList.remove('content-restricted');
+}
+});
+</script>
+domains:
+
+rmcsport.bfmtv.com # Domaine à vérifier, peut rediriger
+injections:
+- position: head
+append: |
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (générique)
+const paywall_overlays = document.querySelectorAll('.paywall-overlay, .premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre le contenu visible
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+
+domains:
+
+lesinrocks.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-content');
+if (locked_content && locked_content.classList.contains('is-restricted')) {
+locked_content.classList.remove('is-restricted');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+telerama.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.premium-content');
+banners.forEach(el => { el.classList.remove('premium-content'); });
+// Déblocage potentiel du contenu
+const locked_content = document.querySelector('.article-text');
+if (locked_content && locked_content.classList.contains('is-paywalled')) {
+locked_content.classList.remove('is-paywalled');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+arretsurimages.net
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (peut être spécifique)
+const paywall_overlays = document.querySelectorAll('.premium-wall');
+paywall_overlays.forEach(el => { el.remove(); });
+// Déblocage potentiel du contenu (nécessite souvent un compte)
+const locked_content = document.querySelector('.content');
+if (locked_content && locked_content.classList.contains('is-restricted')) {
+locked_content.classList.remove('is-restricted');
+locked_content.style.overflow = 'visible';
+locked_content.style.maxHeight = 'none';
+}
+});
+</script>
+domains:
+
+mediapart.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (souvent strict)
+const paywall_overlays = document.querySelectorAll('.abo-overlay, .paywall-幕');
+paywall_overlays.forEach(el => { el.remove(); });
+// Tenter de révéler le contenu (peut être complexe)
+const locked_content = document.querySelectorAll('.article-content');
+locked_content.forEach(el => {
+el.style.overflow = 'visible';
+el.style.maxHeight = 'none';
+const mask = el.querySelector('.mask');
+if (mask) {
+mask.remove();
+}
+});
+});
+</script>
+domains:
+
+acrimed.org
+
+Acrimed est souvent en accès libre, pas de règles spécifiques pour le moment
+domains:
+
+larevuedesmedias.ina.fr
+
+La Revue des Médias de l'INA est souvent en accès libre, pas de règles spécifiques pour le moment
+domains:
+
+numerama.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.premium-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.premium-article');
+banners.forEach(el => { el.classList.remove('premium-article'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+zdnet.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+usine-digitale.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.premium-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+01net.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+sciencesetavenir.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+larecherche.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+reporterre.net
+
+Reporterre est souvent en accès libre, pas de règles spécifiques pour le moment
+domains:
+
+lhistoire.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+scienceshumaines.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+courrierinternational.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+dalloz-actualite.fr # Exemple, vérifier les sous-domaines
+
+lexbase.fr
+
+Souvent des contenus pour professionnels, paywalls stricts, stratégies spécifiques nécessaires
+domains:
+
+reussir.fr # Exemple, vérifier les sous-domaines
+
+lafranceagricole.fr
+
+Presse spécialisée, les paywalls peuvent varier, approche générale pour le moment
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (générique)
+const paywall_overlays = document.querySelectorAll('.paywall-overlay, .premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre le contenu visible
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+automobile-magazine.fr
+
+autoplus.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (générique)
+const paywall_overlays = document.querySelectorAll('.paywall-overlay, .premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre le contenu visible
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+elle.fr # Peut contenir des sections payantes
+
+marmiton.org # Peut contenir des contenus premium
+
+cuisineactuelle.com # Peut contenir des contenus premium
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (générique)
+const paywall_overlays = document.querySelectorAll('.paywall-overlay, .premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre le contenu visible
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+atlantico.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (peut être simple)
+const paywall_overlays = document.querySelectorAll('.premium-offer');
+paywall_overlays.forEach(el => { el.remove(); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium');
+premium_content.forEach(el => {
+el.classList.remove('premium');
+});
+});
+</script>
+domains:
+
+streetpress.com
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.paywall-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+blast-info.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement
+const paywall_overlays = document.querySelectorAll('.premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+franceinfo.fr
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (moins fréquents)
+const paywall_overlays = document.querySelectorAll('.premium-overlay');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+theconversation.com # Vérifier le TLD pour la France (.fr ?)
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (peut être simple)
+const paywall_overlays = document.querySelectorAll('.premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+// Tentative de rendre visible le contenu
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>
+domains:
+
+actu.fr # De nombreux sous-domaines, approche générale
+
+francebleu.fr # De nombreux sous-domaines, approche générale
+injections:
+
+position: head
+append: |
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+// Suppression des bandeaux et pop-ups d'abonnement (générique)
+const paywall_overlays = document.querySelectorAll('.paywall-overlay, .premium-blocker');
+paywall_overlays.forEach(el => { el.remove(); });
+const banners = document.querySelectorAll('.is-premium');
+banners.forEach(el => { el.classList.remove('is-premium'); });
+// Tentative de rendre le contenu visible
+const premium_content = document.querySelectorAll('.premium-content');
+premium_content.forEach(el => {
+el.style.display = 'block';
+el.style.opacity = '1';
+});
+});
+</script>- domains: 
   - www.thestar.com
   - www.niagarafallsreview.ca
   - www.stcatharinesstandard.ca
